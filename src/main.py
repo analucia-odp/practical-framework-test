@@ -5,6 +5,7 @@ from base.test_suite import TestSuite
 from tests.test_suite_test import TestSuiteTest
 from base.test_loader import TestLoader
 from tests.test_loader_test import TestLoaderTest
+from base.test_runner import TestRunner
 
 # ------- Questão 2 -------
 
@@ -85,8 +86,14 @@ from tests.test_loader_test import TestLoaderTest
 
 # ------- Questão 6 -------
 
-result = TestResult()
+# result = TestResult()
+# loader = TestLoader()
+# suite = loader.make_suite(TestLoaderTest)
+# suite.run(result)
+# print(result.summary())
+
 loader = TestLoader()
 suite = loader.make_suite(TestLoaderTest)
-suite.run(result)
-print(result.summary())
+
+runner = TestRunner()
+runner.run(suite)
